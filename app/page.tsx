@@ -979,7 +979,7 @@ export default function Page() {
               {/* Right: product image */}
               <div
                 className="w-36 shrink-0 flex items-center justify-center overflow-hidden"
-                style={{ background: `linear-gradient(180deg, ${flavour.primary}22, ${flavour.secondary}44)` }}
+                style={{ background: '#ffffff' }}
               >
                 <img
                   src={flavour.image}
