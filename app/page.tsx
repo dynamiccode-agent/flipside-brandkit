@@ -1523,7 +1523,7 @@ display: inline-block;`}
 
           <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
             <p className="text-white/30 text-xs" style={{ fontFamily: "'Poppins', sans-serif" }}>
-              © 2025 Flipside Energy. All rights reserved. Aussie made & owned.
+              © 2026 Flipside Energy. All rights reserved. Aussie made & owned.
             </p>
             <div
               className="px-4 py-2 rounded-full text-xs font-bold border border-white/20 text-white/50"
