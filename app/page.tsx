@@ -713,7 +713,7 @@ export default function Page() {
                   style={{ backgroundColor: "rgba(239,68,68,0.05)" }}
                 >
                   <span className="text-red-400 text-xl shrink-0">✕</span>
-                  <p className="text-white/50 line-through" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                  <p className="text-white/70" style={{ fontFamily: "'Poppins', sans-serif" }}>
                     &ldquo;{item.dont}&rdquo;
                   </p>
                 </div>
@@ -1334,7 +1334,7 @@ display: inline-block;`}
               ].map((item) => (
                 <div key={item} className="flex items-start gap-3 rounded-xl p-4 border border-red-500/20" style={{ backgroundColor: "rgba(239,68,68,0.05)" }}>
                   <span className="text-red-400 mt-0.5 shrink-0">✕</span>
-                  <p className="text-white/50 line-through text-sm" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                  <p className="text-white/70 text-sm" style={{ fontFamily: "'Poppins', sans-serif" }}>
                     {item}
                   </p>
                 </div>
