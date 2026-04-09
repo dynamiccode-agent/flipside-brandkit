@@ -653,7 +653,7 @@ export default function Page() {
 
       {/* ── 6.1 FONT DOWNLOADS ── */}
       <Section style={{ backgroundColor: '#ffffff' }} id="fonts">
-        <SectionHeader label="06.1 — Font Downloads" title="DOWNLOAD FONTS" />
+        <SectionHeader label="06.1 — Font Downloads" title="DOWNLOAD FONTS" light />
         <p style={{ color: '#555', marginBottom: '2rem', fontSize: '0.85rem', lineHeight: 1.7, fontFamily: "'Poppins', sans-serif" }}>
           The Flipside Energy brand uses three typeface families. Download the font files below to use in design tools, print production, and digital assets.
         </p>
@@ -698,7 +698,7 @@ export default function Page() {
 
       {/* ── 6.2 PRODUCT TITLE TYPOGRAPHY ── */}
       <Section style={{ backgroundColor: '#F5F5F5' }} id="product-titles">
-        <SectionHeader label="06.2 — Product Titles" title="BATGREXO STYLE" />
+        <SectionHeader label="06.2 — Product Titles" title="BATGREXO STYLE" light />
         <p style={{ color: '#555', marginBottom: '2rem', fontSize: '0.85rem', lineHeight: 1.7, fontFamily: "'Poppins', sans-serif" }}>
           Product flavour names use the <strong>Batgrexo</strong> typeface with a signature layered treatment: black fill text, white border/stroke, with a second black outline. This creates the bold, high-contrast can label style unique to Flipside Energy.
         </p>
@@ -1122,7 +1122,7 @@ export default function Page() {
 
       {/* ── FOUNDERS BADGE ── */}
       <Section style={{ backgroundColor: "#ffffff" }} id="founders">
-        <SectionHeader label="09.6 — Founders" title="THE FOUNDERS BADGE" />
+        <SectionHeader label="09.6 — Founders" title="THE FOUNDERS BADGE" light />
         <p style={{ fontFamily: "'Poppins', sans-serif", color: "#444", fontSize: "0.85rem", marginBottom: "3rem", lineHeight: 1.7 }}>
           Troy and Adrian are the face behind Flipside. Their illustrated portrait is a brand asset — used selectively across packaging, social, and campaigns as a stamp of authenticity. It should feel like a discovery, not a feature.
         </p>
@@ -1184,7 +1184,7 @@ export default function Page() {
 
       {/* ── BUTTON STYLES ── */}
       <Section style={{ backgroundColor: "#F5F5F5" }} id="buttons">
-        <SectionHeader label="09.7 — UI Components" title="BUTTON STYLE" />
+        <SectionHeader label="09.7 — UI Components" title="BUTTON STYLE" light />
         <p style={{ fontFamily: "'Poppins', sans-serif", color: "#555", fontSize: "0.85rem", marginBottom: "3rem", lineHeight: 1.7 }}>
           Flipside buttons have a signature asymmetric corner radius — rounded on the top-left and bottom-right, squared on the top-right and bottom-left. Paired with a hard offset drop shadow (no blur), a white fill, and a solid black border. Bold and deliberate.
         </p>
