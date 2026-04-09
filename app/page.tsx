@@ -67,16 +67,11 @@ function Nav() {
     { label: "Logo", href: "#logo" },
     { label: "Colours", href: "#colours" },
     { label: "Typography", href: "#typography" },
-    { label: "Font Downloads", href: "#fonts" },
-    { label: "Product Titles", href: "#product-titles" },
     { label: "Voice", href: "#voice" },
-    { label: "Messaging", href: "#messaging" },
-    { label: "Flavours", href: "#flavours" },
     { label: "Iconography", href: "#iconography" },
     { label: "Founders", href: "#founders" },
     { label: "Buttons", href: "#buttons" },
     { label: "Headlines", href: "#headlines" },
-    { label: "Social", href: "#social" },
   ];
 
   return (
