@@ -71,6 +71,7 @@ function Nav() {
     { label: "Messaging", href: "#messaging" },
     { label: "Flavours", href: "#flavours" },
     { label: "Iconography", href: "#iconography" },
+    { label: "Founders", href: "#founders" },
     { label: "Social", href: "#social" },
   ];
 
@@ -1032,6 +1033,68 @@ export default function Page() {
           <p style={{ fontFamily: "'Poppins', sans-serif", color: "#888", fontSize: "0.75rem", lineHeight: 1.7 }}>
             <span style={{ color: "#F5F5F5", fontWeight: 600 }}>Usage notes:</span> Icons should always appear on their corresponding gradient backgrounds. Do not recolour, flatten, or apply filters to the 3D icons. Maintain minimum icon size of 48px at all scales. Icons are available as PNG with transparent background.
           </p>
+        </div>
+      </Section>
+
+      {/* ── FOUNDERS BADGE ── */}
+      <Section style={{ backgroundColor: "#ffffff" }} id="founders">
+        <SectionHeader label="09.6 — Founders" title="THE FOUNDERS BADGE" dark />
+        <p style={{ fontFamily: "'Poppins', sans-serif", color: "#444", fontSize: "0.85rem", marginBottom: "3rem", lineHeight: 1.7 }}>
+          Troy and Adrian are the face behind Flipside. Their illustrated portrait is a brand asset — used selectively across packaging, social, and campaigns as a stamp of authenticity. It should feel like a discovery, not a feature.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+          {/* Left — the badge */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+            <div style={{ background: "#f5f5f5", borderRadius: "16px", padding: "2rem", display: "flex", justifyContent: "center" }}>
+              <img src="/images/founders-badge.png" alt="Troy & Adrian — Flipside founders" style={{ maxHeight: "280px", width: "auto", objectFit: "contain" }} />
+            </div>
+            <p style={{ fontFamily: "'Poppins', sans-serif", color: "#888", fontSize: "0.7rem", textAlign: "center", letterSpacing: "0.1em", textTransform: "uppercase" }}>Troy & Adrian — Founders, Flipside Energy</p>
+
+            {/* The rhyme */}
+            <div style={{ background: "#111", borderRadius: "12px", padding: "1.75rem 2rem", textAlign: "center" }}>
+              <p style={{ fontFamily: "Impact, 'Arial Narrow', sans-serif", color: "#111", fontSize: "0.8rem", letterSpacing: "0.08em", lineHeight: 1.8, textTransform: "uppercase", textShadow: "none", userSelect: "none" }}>
+                {/* Intentionally near-invisible on dark — mirrors the website footer treatment */}
+                ROSES ARE RED, VIOLETS ARE BLUE,<br />
+                TROY AND ADRIAN WANT TO RE-ENERGIZE YOU
+              </p>
+              <p style={{ fontFamily: "'Poppins', sans-serif", color: "#555", fontSize: "0.6rem", letterSpacing: "0.2em", textTransform: "uppercase", marginTop: "1rem" }}>
+                ↑ Black on black — as used in the website footer
+              </p>
+            </div>
+          </div>
+
+          {/* Right — usage rules */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+            <h3 style={{ fontFamily: "'Poppins', sans-serif", color: "#111", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: "0.5rem" }}>The Brand Rhyme</h3>
+            <div style={{ background: "#f9f9f9", border: "1px solid #eee", borderRadius: "12px", padding: "1.5rem 2rem", marginBottom: "0.5rem" }}>
+              <p style={{ fontFamily: "Impact, 'Arial Narrow', sans-serif", color: "#111", fontSize: "1rem", letterSpacing: "0.05em", lineHeight: 1.9, textTransform: "uppercase" }}>
+                Roses are red,<br />
+                Violets are blue,<br />
+                Troy and Adrian want<br />
+                to re-energize you.
+              </p>
+            </div>
+            <p style={{ fontFamily: "'Poppins', sans-serif", color: "#666", fontSize: "0.78rem", lineHeight: 1.7 }}>
+              This rhyme is a core piece of brand identity. It&apos;s the founders&apos; voice — warm, direct, slightly cheeky. It humanises the brand and connects back to Troy and Adrian as real people who made something for you.
+            </p>
+
+            <h3 style={{ fontFamily: "'Poppins', sans-serif", color: "#111", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", marginTop: "1rem" }}>Usage Guidelines</h3>
+            {[
+              { icon: "✅", text: "Website footer — black on black, subtle. A reward for those who notice." },
+              { icon: "✅", text: "Packaging — small, inside the can or on the base. An easter egg." },
+              { icon: "✅", text: "Limited edition runs — as a featured design element." },
+              { icon: "✅", text: "Campaign activations — where founders are the story." },
+              { icon: "✅", text: "The founders badge pairs with the rhyme in storytelling content." },
+              { icon: "✕", text: "Don't use on every piece of creative — scarcity makes it land harder." },
+              { icon: "✕", text: "Don't use the badge without context — it needs to feel intentional." },
+            ].map((item) => (
+              <div key={item.text} style={{ display: "flex", gap: "0.75rem", alignItems: "flex-start" }}>
+                <span style={{ color: item.icon === "✅" ? "#10B981" : "#EF4444", fontSize: "0.8rem", marginTop: "2px", flexShrink: 0 }}>{item.icon}</span>
+                <p style={{ fontFamily: "'Poppins', sans-serif", color: "#555", fontSize: "0.75rem", lineHeight: 1.6 }}>{item.text}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </Section>
 
