@@ -84,15 +84,15 @@ function Nav() {
       className="fixed top-0 left-0 right-0 z-50 border-b border-white/10"
       style={{ backgroundColor: "rgba(17,17,17,0.95)", backdropFilter: "blur(12px)" }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-14">
-        <img src="/images/flipside-logo.png" alt="Flipside" className="h-7 w-auto" />
-        <div className="hidden md:flex items-center gap-6">
+      <div className="max-w-full px-4 sm:px-6 flex items-center gap-4 h-14">
+        <img src="/images/flipside-logo.png" alt="Flipside" className="h-7 w-auto shrink-0" />
+        <div className="flex items-center gap-4 overflow-x-auto scrollbar-hide" style={{ scrollbarWidth: 'none' }}>
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="text-xs font-bold text-white/60 hover:text-white transition-colors uppercase tracking-widest"
-              style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 900 }}
+              className="text-white/60 hover:text-white transition-colors uppercase shrink-0"
+              style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: '10px', letterSpacing: '0.12em', whiteSpace: 'nowrap' }}
             >
               {l.label}
             </a>

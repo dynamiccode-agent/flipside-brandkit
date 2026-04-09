@@ -78,3 +78,6 @@ body {
   letter-spacing: 0.2em;
   text-transform: uppercase;
 }
+
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
