@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 
 // ─── Colour Swatch Component ─────────────────────────────────────────────────
 function Swatch({
@@ -61,6 +61,7 @@ function Swatch({
 
 // ─── Nav ─────────────────────────────────────────────────────────────────────
 function Nav() {
+  const [open, setOpen] = React.useState(false);
   const links = [
     { label: "Story", href: "#story" },
     { label: "Products", href: "#products" },
@@ -75,32 +76,75 @@ function Nav() {
   ];
 
   return (
-    <nav
-      className="fixed top-0 left-0 right-0 z-50 border-b border-white/10"
-      style={{ backgroundColor: "rgba(17,17,17,0.95)", backdropFilter: "blur(12px)" }}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-center gap-6 h-14 flex-wrap">
-        <img src="/images/flipside-logo.png" alt="Flipside" className="h-7 w-auto shrink-0" />
-        <div className="flex items-center gap-5">
-          {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="text-white/60 hover:text-white transition-colors uppercase shrink-0"
-              style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: '10px', letterSpacing: '0.12em', whiteSpace: 'nowrap' }}
-            >
-              {l.label}
-            </a>
-          ))}
+    <>
+      <nav
+        className="fixed top-0 left-0 right-0 z-50 border-b border-white/10"
+        style={{ backgroundColor: "rgba(17,17,17,0.95)", backdropFilter: "blur(12px)" }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
+          {/* Logo */}
+          <img src="/images/flipside-logo.png" alt="Flipside" className="h-7 w-auto shrink-0" />
+
+          {/* Desktop links */}
+          <div className="hidden md:flex items-center gap-5">
+            {links.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                className="text-white/60 hover:text-white transition-colors uppercase shrink-0"
+                style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: '10px', letterSpacing: '0.12em', whiteSpace: 'nowrap' }}
+              >
+                {l.label}
+              </a>
+            ))}
+          </div>
+
+          <span
+            className="hidden md:block text-xs font-bold text-white/40 uppercase tracking-widest"
+            style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700 }}
+          >
+            v1.0
+          </span>
+
+          {/* Hamburger — mobile only */}
+          <button
+            className="md:hidden flex flex-col justify-center items-center w-8 h-8 gap-1.5"
+            onClick={() => setOpen(!open)}
+            aria-label="Toggle menu"
+          >
+            <span className={`block h-0.5 w-6 bg-white transition-all duration-200 ${open ? 'rotate-45 translate-y-2' : ''}`} />
+            <span className={`block h-0.5 w-6 bg-white transition-all duration-200 ${open ? 'opacity-0' : ''}`} />
+            <span className={`block h-0.5 w-6 bg-white transition-all duration-200 ${open ? '-rotate-45 -translate-y-2' : ''}`} />
+          </button>
         </div>
-        <span
-          className="text-xs font-bold text-white/40 uppercase tracking-widest"
-          style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700 }}
+      </nav>
+
+      {/* Mobile drawer */}
+      {open && (
+        <div
+          className="fixed inset-0 z-40 md:hidden"
+          onClick={() => setOpen(false)}
         >
-          v1.0
-        </span>
-      </div>
-    </nav>
+          <div
+            className="absolute top-14 left-0 right-0 border-b border-white/10 py-4 px-6 flex flex-col gap-4"
+            style={{ backgroundColor: "rgba(17,17,17,0.98)", backdropFilter: "blur(12px)" }}
+            onClick={e => e.stopPropagation()}
+          >
+            {links.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                onClick={() => setOpen(false)}
+                className="text-white/70 hover:text-white transition-colors uppercase py-1 border-b border-white/5 last:border-0"
+                style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: '11px', letterSpacing: '0.15em' }}
+              >
+                {l.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+    </>
   );
 }
 
