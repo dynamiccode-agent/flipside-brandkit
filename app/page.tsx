@@ -73,6 +73,7 @@ function Nav() {
     { label: "Iconography", href: "#iconography" },
     { label: "Founders", href: "#founders" },
     { label: "Buttons", href: "#buttons" },
+    { label: "Headlines", href: "#headlines" },
     { label: "Social", href: "#social" },
   ];
 
@@ -1175,6 +1176,113 @@ border: 2px solid #111111;
 background: #ffffff;`}
               </code>
             </div>
+          </div>
+        </div>
+      </Section>
+
+      {/* ── HEADLINE HIGHLIGHT STYLE ── */}
+      <Section style={{ backgroundColor: "#0A0A0A" }} id="headlines">
+        <SectionHeader label="09.8 — Typography" title="HEADLINE HIGHLIGHT STYLE" />
+        <p style={{ fontFamily: "'Poppins', sans-serif", color: "#888", fontSize: "0.85rem", marginBottom: "3rem", lineHeight: 1.7 }}>
+          Key words in headlines are punched out in a signature black highlight box — slightly rotated, pink border, hard offset shadow. Used to create visual emphasis and energy without relying on colour alone.
+        </p>
+
+        {/* Live examples */}
+        <div style={{ display: "flex", flexDirection: "column", gap: "3rem", marginBottom: "3rem" }}>
+
+          {/* Example 1 — light blue bg */}
+          <div style={{ background: "#BCEFF9", borderRadius: "12px", padding: "2.5rem 2rem", display: "flex", alignItems: "center", gap: "1rem", flexWrap: "wrap" }}>
+            <span style={{
+              fontFamily: "Impact, 'Arial Narrow', sans-serif",
+              fontSize: "clamp(1.8rem, 5vw, 2.8rem)", fontWeight: 900,
+              color: "#111", letterSpacing: "-0.01em", textTransform: "uppercase"
+            }}>CHOOSE YOUR</span>
+            <span style={{
+              fontFamily: "Impact, 'Arial Narrow', sans-serif",
+              fontSize: "clamp(1.8rem, 5vw, 2.8rem)", fontWeight: 900,
+              color: "#ffffff", letterSpacing: "-0.01em", textTransform: "uppercase",
+              background: "#111111",
+              border: "3px solid #FF78B3",
+              padding: "0.2em 0.6em",
+              display: "inline-block",
+              transform: "rotate(-1.5deg)",
+              boxShadow: "6px 6px 0px 0px #111111",
+              position: "relative",
+            }}>ENERGY SIDE KICK</span>
+          </div>
+
+          {/* Example 2 — mint bg */}
+          <div style={{ background: "#8FDCCD", borderRadius: "12px", padding: "2.5rem 2rem", display: "flex", alignItems: "center", gap: "1rem", flexWrap: "wrap" }}>
+            <span style={{
+              fontFamily: "Impact, 'Arial Narrow', sans-serif",
+              fontSize: "clamp(1.8rem, 5vw, 2.8rem)", fontWeight: 900,
+              color: "#ffffff", letterSpacing: "-0.01em", textTransform: "uppercase",
+              background: "#111111",
+              border: "3px solid #FF78B3",
+              padding: "0.2em 0.6em",
+              display: "inline-block",
+              transform: "rotate(-1.5deg)",
+              boxShadow: "6px 6px 0px 0px #111111",
+            }}>STEADY ENERGY</span>
+            <span style={{
+              fontFamily: "Impact, 'Arial Narrow', sans-serif",
+              fontSize: "clamp(1.8rem, 5vw, 2.8rem)", fontWeight: 900,
+              color: "#111", letterSpacing: "-0.01em", textTransform: "uppercase"
+            }}>, ALL DAY.</span>
+          </div>
+        </div>
+
+        {/* Anatomy */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+            <h3 style={{ fontFamily: "'Poppins', sans-serif", color: "#F5F5F5", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase" }}>Highlight Box Anatomy</h3>
+            {[
+              { prop: "Background", value: "#111111", note: "Always black. High contrast against any brand colour." },
+              { prop: "Border", value: "3px solid #FF78B3", note: "Hot pink border — the Flipside signature." },
+              { prop: "Rotation", value: "rotate(-1.5deg)", note: "Slight anti-clockwise tilt. Never more than 2°." },
+              { prop: "Box Shadow", value: "6px 6px 0px #111", note: "Hard offset. No blur. Down and right (+X, +Y)." },
+              { prop: "Text colour", value: "#FFFFFF", note: "White text inside the box only." },
+              { prop: "Font", value: "Impact / DharmaGothicE 900", note: "Same display font as all hero headlines." },
+            ].map((item) => (
+              <div key={item.prop} style={{ padding: "0.875rem 1.25rem", background: "#111", border: "1px solid #222", borderRadius: "8px" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "0.2rem", gap: "1rem" }}>
+                  <p style={{ fontFamily: "'Poppins', sans-serif", color: "#F5F5F5", fontSize: "0.7rem", fontWeight: 700 }}>{item.prop}</p>
+                  <code style={{ fontFamily: "monospace", background: "#1A1A1A", color: "#C9A84C", fontSize: "0.6rem", padding: "2px 8px", borderRadius: "4px", whiteSpace: "nowrap" }}>{item.value}</code>
+                </div>
+                <p style={{ fontFamily: "'Poppins', sans-serif", color: "#666", fontSize: "0.68rem", lineHeight: 1.5 }}>{item.note}</p>
+              </div>
+            ))}
+          </div>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+            <h3 style={{ fontFamily: "'Poppins', sans-serif", color: "#F5F5F5", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase" }}>CSS Snippet</h3>
+            <div style={{ background: "#111", border: "1px solid #222", borderRadius: "8px", padding: "1.25rem 1.5rem" }}>
+              <code style={{ fontFamily: "monospace", color: "#8FE9DA", fontSize: "0.65rem", lineHeight: 2, display: "block", whiteSpace: "pre" }}>
+{`background: #111111;
+border: 3px solid #FF78B3;
+color: #ffffff;
+transform: rotate(-1.5deg);
+box-shadow: 6px 6px 0px 0px #111111;
+padding: 0.2em 0.6em;
+display: inline-block;`}
+              </code>
+            </div>
+
+            <h3 style={{ fontFamily: "'Poppins', sans-serif", color: "#F5F5F5", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", marginTop: "0.5rem" }}>Usage Rules</h3>
+            {[
+              { icon: "✅", text: "Highlight 1–3 key words per headline — not the whole thing." },
+              { icon: "✅", text: "Works on any Flipside brand colour background." },
+              { icon: "✅", text: "Angle should always be slightly anti-clockwise (negative rotation)." },
+              { icon: "✅", text: "Pair with un-highlighted plain black text for contrast." },
+              { icon: "✕", text: "Don't use on dark/black backgrounds — the shadow disappears." },
+              { icon: "✕", text: "Don't highlight more than one phrase per headline." },
+              { icon: "✕", text: "Don't rotate more than 2° — subtle tilt only." },
+            ].map((item) => (
+              <div key={item.text} style={{ display: "flex", gap: "0.75rem", alignItems: "flex-start" }}>
+                <span style={{ color: item.icon === "✅" ? "#10B981" : "#EF4444", fontSize: "0.8rem", marginTop: "2px", flexShrink: 0 }}>{item.icon}</span>
+                <p style={{ fontFamily: "'Poppins', sans-serif", color: "#888", fontSize: "0.72rem", lineHeight: 1.6 }}>{item.text}</p>
+              </div>
+            ))}
           </div>
         </div>
       </Section>
