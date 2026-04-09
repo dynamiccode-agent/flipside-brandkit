@@ -218,7 +218,7 @@ export default function Page() {
               fontWeight: 900,
             }}
           >
-            Brand Guidelines — Version 1.0 | 2025
+            Brand Guidelines — Version 1.0 | 2026
           </div>
 
           <img src="/images/flipside-logo.png" alt="Flipside Energy" className="h-32 md:h-48 w-auto mx-auto" />
@@ -1635,7 +1635,7 @@ display: inline-block;`}
                 style={{ height: "48px", width: "auto", marginBottom: "0.75rem" }}
               />
               <p className="text-white/40 text-sm" style={{ fontFamily: "'Poppins', sans-serif" }}>
-                Brand Guidelines v1.0 — 2025
+                Brand Guidelines v1.0 — 2026
               </p>
             </div>
 
