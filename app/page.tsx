@@ -390,24 +390,23 @@ export default function Page() {
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { label: "Don't stretch or distort", example: "FLIPSIDE", style: { transform: "scaleX(1.5)" } },
-              { label: "Don't add drop shadows", example: "FLIPSIDE", style: { textShadow: "4px 4px 8px rgba(0,0,0,0.5)" } },
-              { label: "Don't use low opacity", example: "FLIPSIDE", style: { opacity: 0.2 } },
-              { label: "Don't rotate", example: "FLIPSIDE", style: { transform: "rotate(-15deg)" } },
+              { label: "Don't stretch or distort", imgStyle: { transform: "scaleX(1.6)", transformOrigin: "center" } },
+              { label: "Don't add drop shadows", imgStyle: { filter: "drop-shadow(4px 4px 8px rgba(0,0,0,0.6))" } },
+              { label: "Don't use low opacity", imgStyle: { opacity: 0.2 } },
+              { label: "Don't rotate", imgStyle: { transform: "rotate(-15deg)" } },
             ].map((d) => (
               <div key={d.label} className="rounded-xl p-5 border-2 border-red-400/30 bg-red-50">
-                <div className="flex items-center justify-center h-16 mb-3">
-                  <span
-                    className="text-2xl text-[#111111] block"
+                <div className="flex items-center justify-center h-16 mb-3 overflow-hidden">
+                  <img
+                    src="/images/flipside-logo.png"
+                    alt="Flipside logo"
                     style={{
-                      fontFamily: "Impact, 'Arial Narrow', sans-serif",
-                      fontWeight: 900,
-                      letterSpacing: "-0.02em",
-                      ...d.style,
+                      height: "32px",
+                      width: "auto",
+                      filter: "invert(1)",
+                      ...d.imgStyle,
                     }}
-                  >
-                    {d.example}
-                  </span>
+                  />
                 </div>
                 <p className="text-red-500 text-xs font-bold text-center" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700 }}>
                   ✕ {d.label}
