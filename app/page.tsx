@@ -480,10 +480,10 @@ export default function Page() {
           <div className="p-8 border-b border-white/10 flex items-center justify-between flex-wrap gap-3">
             <div>
               <p className="text-white font-bold" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 800 }}>
-                Display Font
+                Compacta
               </p>
               <p className="text-white/50 text-sm" style={{ fontFamily: "'Poppins', sans-serif" }}>
-                DharmaGothicE → Impact, &apos;Arial Narrow&apos; (fallback) | Weight 900 | Tracking -0.02em
+                Compacta | Weight 900 | Tracking -0.02em | Headlines &amp; hero display only
               </p>
             </div>
             <span
@@ -579,7 +579,7 @@ export default function Page() {
           </p>
           <div className="space-y-6">
             {[
-              { name: "Display", size: "89px", sample: "WELCOME TO THE FLIPSIDE", display: true },
+              { name: "Compacta", size: "89px", sample: "WELCOME TO THE FLIPSIDE", display: true },
               { name: "H1", size: "56px", sample: "Clean Energy. No Crash.", display: true },
               { name: "H2", size: "40px", sample: "The Better Side of Energy", display: true },
               { name: "H3", size: "28px", sample: "Flip the switch today.", display: false },
@@ -1324,7 +1324,7 @@ background: #ffffff;`}
               { prop: "Rotation", value: "rotate(-1.5deg)", note: "Slight anti-clockwise tilt. Never more than 2°." },
               { prop: "Box Shadow", value: "6px 6px 0px #111", note: "Hard offset. No blur. Down and right (+X, +Y)." },
               { prop: "Text colour", value: "#FFFFFF", note: "White text inside the box only." },
-              { prop: "Font", value: "Impact / DharmaGothicE 900", note: "Same display font as all hero headlines." },
+              { prop: "Font", value: "Compacta 900", note: "Same display font as all hero headlines." },
             ].map((item) => (
               <div key={item.prop} style={{ padding: "0.875rem 1.25rem", background: "#111", border: "1px solid #222", borderRadius: "8px" }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "0.2rem", gap: "1rem" }}>
