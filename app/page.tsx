@@ -79,9 +79,9 @@ function Nav() {
       className="fixed top-0 left-0 right-0 z-50 border-b border-white/10"
       style={{ backgroundColor: "rgba(17,17,17,0.95)", backdropFilter: "blur(12px)" }}
     >
-      <div className="max-w-full px-4 sm:px-6 flex items-center gap-4 h-14">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-center gap-6 h-14 flex-wrap">
         <img src="/images/flipside-logo.png" alt="Flipside" className="h-7 w-auto shrink-0" />
-        <div className="flex items-center gap-4 overflow-x-auto scrollbar-hide" style={{ scrollbarWidth: 'none' }}>
+        <div className="flex items-center gap-5">
           {links.map((l) => (
             <a
               key={l.href}
