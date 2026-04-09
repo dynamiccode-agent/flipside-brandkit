@@ -1103,9 +1103,25 @@ export default function Page() {
                 <p style={{ fontFamily: "'Poppins', sans-serif", color: item.border, fontSize: "0.6rem", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: "0.25rem" }}>
                   {item.sublabel}
                 </p>
-                <p style={{ fontFamily: "'Compacta', Impact, 'Arial Narrow', sans-serif", color: "#F5F5F5", fontSize: "1.1rem", letterSpacing: "0.05em", fontWeight: 900, marginBottom: "0.2rem" }}>
-                  {item.label}
-                </p>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "0.2rem" }}>
+                  <p style={{ fontFamily: "'Compacta', Impact, 'Arial Narrow', sans-serif", color: "#F5F5F5", fontSize: "1.1rem", letterSpacing: "0.05em", fontWeight: 900 }}>
+                    {item.label}
+                  </p>
+                  <a
+                    href={item.icon}
+                    download
+                    title={`Download ${item.label} icon`}
+                    style={{
+                      color: item.border, fontSize: "0.55rem", fontFamily: "'Poppins', sans-serif",
+                      fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase",
+                      textDecoration: "none", border: `1px solid ${item.border}60`,
+                      padding: "3px 8px", borderRadius: "4px", flexShrink: 0,
+                      transition: "all 0.15s"
+                    }}
+                  >
+                    ↓ PNG
+                  </a>
+                </div>
                 <p style={{ fontFamily: "'Poppins', sans-serif", color: "#666", fontSize: "0.7rem" }}>
                   {item.desc}
                 </p>
