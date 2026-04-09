@@ -63,6 +63,7 @@ function Swatch({
 function Nav() {
   const links = [
     { label: "Story", href: "#story" },
+    { label: "Products", href: "#products" },
     { label: "Logo", href: "#logo" },
     { label: "Colours", href: "#colours" },
     { label: "Typography", href: "#typography" },
@@ -78,12 +79,7 @@ function Nav() {
       style={{ backgroundColor: "rgba(17,17,17,0.95)", backdropFilter: "blur(12px)" }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-14">
-        <span
-          className="font-display text-white text-xl tracking-tight"
-          style={{ fontFamily: "Impact, 'Arial Narrow', sans-serif", fontWeight: 900, letterSpacing: "-0.02em" }}
-        >
-          FLIPSIDE
-        </span>
+        <img src="/images/flipside-logo.png" alt="Flipside" className="h-7 w-auto" />
         <div className="hidden md:flex items-center gap-6">
           {links.map((l) => (
             <a
@@ -180,18 +176,7 @@ export default function Page() {
             Brand Guidelines — Version 1.0 | 2025
           </div>
 
-          <h1
-            className="text-[80px] sm:text-[120px] md:text-[160px] lg:text-[200px] leading-none text-[#111111]"
-            style={{
-              fontFamily: "Impact, 'Arial Narrow', sans-serif",
-              fontWeight: 900,
-              letterSpacing: "-0.03em",
-            }}
-          >
-            FLIPSIDE
-            <br />
-            ENERGY
-          </h1>
+          <img src="/images/flipside-logo.png" alt="Flipside Energy" className="h-32 md:h-48 w-auto mx-auto" />
 
           <p
             className="text-xl md:text-2xl text-[#282828] font-bold"
@@ -291,19 +276,63 @@ export default function Page() {
         </div>
       </Section>
 
-      {/* ── 3. LOGO USAGE ── */}
+      {/* ── 3. PRODUCTS SHOWCASE ── */}
+      <Section id="products" style={{ backgroundColor: "#111111" }}>
+        <SectionHeader label="03 — Products" title="THE RANGE" />
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
+          {[
+            { name: "Blue Ice", variant: "Original", image: "/images/blue-ice.jpg", primary: "#23E1CE" },
+            { name: "Blue Ice", variant: "Sugar-Free", image: "/images/blue-ice-sf.jpg", primary: "#74CEBF" },
+            { name: "Violet Voltage", variant: "Original", image: "/images/violet-voltage.jpg", primary: "#BB82EE" },
+            { name: "Violet Voltage", variant: "Sugar-Free", image: "/images/violet-voltage-sf.jpg", primary: "#A66DE9" },
+            { name: "Hypermelon", variant: "Original", image: "/images/hypermelon.jpg", primary: "#8FE9DA" },
+            { name: "Hypermelon", variant: "Sugar-Free", image: "/images/hypermelon-sf.jpg", primary: "#74CEBF" },
+            { name: "Sherbert Bang", variant: "Original", image: "/images/sherbert-bang.jpg", primary: "#FF6A71" },
+            { name: "Sherbert Bang", variant: "Sugar-Free", image: "/images/sherbert-bang-sf.jpg", primary: "#E85368" },
+          ].map((product) => (
+            <div
+              key={`${product.name}-${product.variant}`}
+              className="rounded-2xl overflow-hidden border border-white/10 group hover:border-white/30 transition-colors"
+              style={{ backgroundColor: "#0A0A0A" }}
+            >
+              <div
+                className="relative h-56 flex items-center justify-center p-4"
+                style={{ background: `linear-gradient(180deg, ${product.primary}22 0%, ${product.primary}0a 100%)` }}
+              >
+                <img
+                  src={product.image}
+                  alt={`${product.name} ${product.variant}`}
+                  className="h-full w-full object-contain group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-4">
+                <p className="text-white font-bold text-sm leading-tight" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 800 }}>
+                  {product.name}
+                </p>
+                <p className="text-white/50 text-xs mt-0.5" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                  {product.variant}
+                </p>
+                <p
+                  className="text-sm font-bold mt-2"
+                  style={{ color: product.primary, fontFamily: "'Poppins', sans-serif", fontWeight: 900 }}
+                >
+                  $75 / 24pk
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* ── 4. LOGO USAGE ── */}
       <Section id="logo" style={{ backgroundColor: "#F5F5F5" }}>
-        <SectionHeader label="03 — Logo Usage" title="LOGO SYSTEM" light />
+        <SectionHeader label="04 — Logo Usage" title="LOGO SYSTEM" light />
 
         <div className="grid md:grid-cols-3 gap-6 mb-12">
           {/* Dark bg */}
           <div className="rounded-2xl p-10 flex flex-col items-center gap-4 border border-black/10" style={{ backgroundColor: "#111111" }}>
-            <div
-              className="text-5xl text-white"
-              style={{ fontFamily: "Impact, 'Arial Narrow', sans-serif", fontWeight: 900, letterSpacing: "-0.02em" }}
-            >
-              FLIPSIDE
-            </div>
+            <img src="/images/flipside-logo.png" alt="Flipside Energy" className="h-16 w-auto" />
             <p className="text-white/40 text-xs font-bold uppercase tracking-widest text-center" style={{ fontFamily: "'Poppins', sans-serif" }}>
               Logo on Dark
             </p>
@@ -311,12 +340,7 @@ export default function Page() {
 
           {/* Light bg */}
           <div className="rounded-2xl p-10 flex flex-col items-center gap-4 border border-black/10 bg-white">
-            <div
-              className="text-5xl text-[#111111]"
-              style={{ fontFamily: "Impact, 'Arial Narrow', sans-serif", fontWeight: 900, letterSpacing: "-0.02em" }}
-            >
-              FLIPSIDE
-            </div>
+            <img src="/images/flipside-logo.png" alt="Flipside Energy" className="h-16 w-auto" style={{ filter: 'invert(1)' }} />
             <p className="text-black/40 text-xs font-bold uppercase tracking-widest text-center" style={{ fontFamily: "'Poppins', sans-serif" }}>
               Logo on Light
             </p>
@@ -325,14 +349,9 @@ export default function Page() {
           {/* Coloured bg */}
           <div
             className="rounded-2xl p-10 flex flex-col items-center gap-4 border border-black/10"
-            style={{ background: "linear-gradient(135deg, #FF9EDB, #8FDCCD)" }}
+            style={{ backgroundColor: "#FF9EDB" }}
           >
-            <div
-              className="text-5xl text-[#111111]"
-              style={{ fontFamily: "Impact, 'Arial Narrow', sans-serif", fontWeight: 900, letterSpacing: "-0.02em" }}
-            >
-              FLIPSIDE
-            </div>
+            <img src="/images/flipside-logo.png" alt="Flipside Energy" className="h-16 w-auto" style={{ filter: 'invert(1)' }} />
             <p className="text-[#111111]/50 text-xs font-bold uppercase tracking-widest text-center" style={{ fontFamily: "'Poppins', sans-serif" }}>
               Logo on Colour
             </p>
@@ -401,7 +420,7 @@ export default function Page() {
 
       {/* ── 4. COLOUR PALETTE ── */}
       <Section id="colours" style={{ backgroundColor: "#0A0A0A" }}>
-        <SectionHeader label="04 — Colour Palette" title="COLOUR SYSTEM" />
+        <SectionHeader label="05 — Colour Palette" title="COLOUR SYSTEM" />
 
         {/* Core */}
         <div className="mb-12">
@@ -449,7 +468,7 @@ export default function Page() {
 
       {/* ── 5. TYPOGRAPHY ── */}
       <Section id="typography" style={{ backgroundColor: "#111111" }}>
-        <SectionHeader label="05 — Typography" title="TYPE SYSTEM" />
+        <SectionHeader label="06 — Typography" title="TYPE SYSTEM" />
 
         {/* Display font */}
         <div className="mb-16 rounded-2xl overflow-hidden border border-white/10">
@@ -629,7 +648,7 @@ export default function Page() {
 
       {/* ── 6. VOICE & TONE ── */}
       <Section id="voice" style={{ backgroundColor: "#0A0A0A" }}>
-        <SectionHeader label="06 — Voice & Tone" title="VOICE & TONE" />
+        <SectionHeader label="07 — Voice & Tone" title="VOICE & TONE" />
 
         {/* Tone pillars */}
         <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-16">
@@ -735,7 +754,7 @@ export default function Page() {
 
       {/* ── 7. MESSAGING ── */}
       <Section id="messaging" style={{ backgroundColor: "#111111" }}>
-        <SectionHeader label="07 — Messaging" title="MESSAGING SYSTEM" />
+        <SectionHeader label="08 — Messaging" title="MESSAGING SYSTEM" />
 
         {/* Taglines */}
         <div className="mb-16">
@@ -868,7 +887,7 @@ export default function Page() {
 
       {/* ── 8. FLAVOUR COLOUR SYSTEM ── */}
       <Section id="flavours" style={{ backgroundColor: "#0A0A0A" }}>
-        <SectionHeader label="08 — Flavour System" title="FLAVOUR COLOURS" />
+        <SectionHeader label="09 — Flavour System" title="FLAVOUR COLOURS" />
 
         <div className="grid md:grid-cols-2 gap-6">
           {[
@@ -878,7 +897,7 @@ export default function Page() {
               secondary: "#74CEBF",
               personality: "Cool, clean, crisp",
               desc: "The refreshing original. Icy cool with a clean finish. The one that started it all.",
-              textDark: true,
+              image: "/images/blue-ice.jpg",
             },
             {
               name: "Violet Voltage",
@@ -886,7 +905,7 @@ export default function Page() {
               secondary: "#A66DE9",
               personality: "Electric, bold, vibrant",
               desc: "High voltage energy in every sip. Bold flavour that hits different. No apologies.",
-              textDark: true,
+              image: "/images/violet-voltage.jpg",
             },
             {
               name: "Hypermelon",
@@ -894,7 +913,7 @@ export default function Page() {
               secondary: "#74CEBF",
               personality: "Fresh, juicy, smooth",
               desc: "That summer feeling in a can. Fresh and juicy with smooth energy to match.",
-              textDark: true,
+              image: "/images/hypermelon.jpg",
             },
             {
               name: "Sherbert Bang",
@@ -902,68 +921,72 @@ export default function Page() {
               secondary: "#E85368",
               personality: "Tangy, fun, explosive",
               desc: "Nostalgia hits different. Sweet, tangy, and absolutely packed with personality.",
-              textDark: true,
+              image: "/images/sherbert-bang.jpg",
             },
           ].map((flavour) => (
             <div
               key={flavour.name}
-              className="rounded-2xl overflow-hidden border border-white/10"
-              style={{ backgroundColor: "#111111" }}
+              className="rounded-2xl overflow-hidden border border-white/10 flex"
+              style={{ backgroundColor: "#111111", minHeight: "280px" }}
             >
-              {/* Gradient header */}
-              <div
-                className="h-32 relative"
-                style={{
-                  background: `linear-gradient(135deg, ${flavour.primary}, ${flavour.secondary})`,
-                }}
-              >
-                <div className="absolute inset-0 p-6 flex items-end">
+              {/* Left: colour header with name + personality + desc + swatches */}
+              <div className="flex-1 flex flex-col">
+                <div
+                  className="p-6 flex flex-col justify-end"
+                  style={{
+                    background: `linear-gradient(135deg, ${flavour.primary}, ${flavour.secondary})`,
+                    minHeight: "120px",
+                  }}
+                >
                   <p
-                    className="text-4xl text-[#111111]"
+                    className="text-3xl text-[#111111] leading-tight"
                     style={{ fontFamily: "Impact, 'Arial Narrow', sans-serif", fontWeight: 900, letterSpacing: "-0.02em" }}
                   >
                     {flavour.name.toUpperCase()}
                   </p>
-                </div>
-              </div>
-
-              <div className="p-6 space-y-5">
-                {/* Personality */}
-                <div>
-                  <p className="text-white/40 text-xs font-bold uppercase tracking-widest mb-1" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 800 }}>
-                    Personality
-                  </p>
-                  <p className="text-white font-bold" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700 }}>
+                  <p className="text-[#111111]/60 text-xs font-bold uppercase tracking-widest mt-1" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 800 }}>
                     {flavour.personality}
                   </p>
                 </div>
 
-                {/* Description */}
-                <p className="text-white/60 text-sm leading-relaxed" style={{ fontFamily: "'Poppins', sans-serif" }}>
-                  {flavour.desc}
-                </p>
+                <div className="p-5 space-y-4 flex-1">
+                  <p className="text-white/60 text-sm leading-relaxed" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                    {flavour.desc}
+                  </p>
 
-                {/* Colour swatches */}
-                <div className="flex gap-3">
-                  <SwatchMini hex={flavour.primary} label="Primary" />
-                  <SwatchMini hex={flavour.secondary} label="Secondary" />
-                </div>
+                  <div className="flex gap-3">
+                    <SwatchMini hex={flavour.primary} label="Primary" />
+                    <SwatchMini hex={flavour.secondary} label="Secondary" />
+                  </div>
 
-                {/* Available variants */}
-                <div className="flex gap-2">
-                  <span
-                    className="px-3 py-1 rounded-full text-xs font-bold border border-white/20 text-white/70"
-                    style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700 }}
-                  >
-                    Original
-                  </span>
-                  <span
-                    className="px-3 py-1 rounded-full text-xs font-bold border border-white/20 text-white/70"
-                    style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700 }}
-                  >
-                    Sugar-Free
-                  </span>
+                  <div className="flex gap-2">
+                    <span
+                      className="px-3 py-1 rounded-full text-xs font-bold border border-white/20 text-white/70"
+                      style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700 }}
+                    >
+                      Original
+                    </span>
+                    <span
+                      className="px-3 py-1 rounded-full text-xs font-bold border border-white/20 text-white/70"
+                      style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700 }}
+                    >
+                      Sugar-Free
+                    </span>
+                  </div>
                 </div>
+              </div>
+
+              {/* Right: product image */}
+              <div
+                className="w-36 shrink-0 flex items-center justify-center overflow-hidden"
+                style={{ background: `linear-gradient(180deg, ${flavour.primary}22, ${flavour.secondary}44)` }}
+              >
+                <img
+                  src={flavour.image}
+                  alt={flavour.name}
+                  className="h-full w-full object-contain p-3"
+                  style={{ maxHeight: "280px" }}
+                />
               </div>
             </div>
           ))}
@@ -972,7 +995,7 @@ export default function Page() {
 
       {/* ── 9. PHOTOGRAPHY DIRECTION ── */}
       <Section style={{ backgroundColor: "#111111" }} id="photography">
-        <SectionHeader label="09 — Creative Direction" title="PHOTOGRAPHY STYLE" />
+        <SectionHeader label="10 — Creative Direction" title="PHOTOGRAPHY STYLE" />
 
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           {/* Do */}
@@ -1049,7 +1072,7 @@ export default function Page() {
 
       {/* ── 10. SOCIAL MEDIA ── */}
       <Section id="social" style={{ backgroundColor: "#0A0A0A" }}>
-        <SectionHeader label="10 — Social Media" title="SOCIAL GUIDELINES" />
+        <SectionHeader label="11 — Social Media" title="SOCIAL GUIDELINES" />
 
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           {/* Handles & hashtags */}
