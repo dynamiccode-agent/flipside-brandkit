@@ -1038,7 +1038,7 @@ export default function Page() {
 
       {/* ── FOUNDERS BADGE ── */}
       <Section style={{ backgroundColor: "#ffffff" }} id="founders">
-        <SectionHeader label="09.6 — Founders" title="THE FOUNDERS BADGE" dark />
+        <SectionHeader label="09.6 — Founders" title="THE FOUNDERS BADGE" />
         <p style={{ fontFamily: "'Poppins', sans-serif", color: "#444", fontSize: "0.85rem", marginBottom: "3rem", lineHeight: 1.7 }}>
           Troy and Adrian are the face behind Flipside. Their illustrated portrait is a brand asset — used selectively across packaging, social, and campaigns as a stamp of authenticity. It should feel like a discovery, not a feature.
         </p>
