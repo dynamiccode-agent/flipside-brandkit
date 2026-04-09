@@ -1492,14 +1492,11 @@ display: inline-block;`}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
             <div>
-              <p
-                className="text-white text-5xl mb-3"
-                style={{ fontFamily: "Impact, 'Arial Narrow', sans-serif", fontWeight: 900, letterSpacing: "-0.02em" }}
-              >
-                FLIPSIDE
-                <br />
-                ENERGY
-              </p>
+              <img
+                src="/images/flipside-logo.png"
+                alt="Flipside Energy"
+                style={{ height: "48px", width: "auto", marginBottom: "0.75rem" }}
+              />
               <p className="text-white/40 text-sm" style={{ fontFamily: "'Poppins', sans-serif" }}>
                 Brand Guidelines v1.0 — 2025
               </p>
