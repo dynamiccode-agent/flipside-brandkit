@@ -72,6 +72,7 @@ function Nav() {
     { label: "Flavours", href: "#flavours" },
     { label: "Iconography", href: "#iconography" },
     { label: "Founders", href: "#founders" },
+    { label: "Buttons", href: "#buttons" },
     { label: "Social", href: "#social" },
   ];
 
@@ -1094,6 +1095,86 @@ export default function Page() {
                 <p style={{ fontFamily: "'Poppins', sans-serif", color: "#555", fontSize: "0.75rem", lineHeight: 1.6 }}>{item.text}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* ── BUTTON STYLES ── */}
+      <Section style={{ backgroundColor: "#F5F5F5" }} id="buttons">
+        <SectionHeader label="09.7 — UI Components" title="BUTTON STYLE" />
+        <p style={{ fontFamily: "'Poppins', sans-serif", color: "#555", fontSize: "0.85rem", marginBottom: "3rem", lineHeight: 1.7 }}>
+          Flipside buttons have a signature asymmetric corner radius — rounded on the top-left and bottom-right, squared on the top-right and bottom-left. Paired with a hard offset drop shadow (no blur), a white fill, and a solid black border. Bold and deliberate.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+          {/* Left — live examples */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
+            <h3 style={{ fontFamily: "'Poppins', sans-serif", color: "#111", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase" }}>Live Examples</h3>
+
+            {/* Pink bg */}
+            <div style={{ background: "#FF9EDB", borderRadius: "12px", padding: "2.5rem", display: "flex", flexDirection: "column", gap: "1.5rem", alignItems: "flex-start" }}>
+              <button style={{
+                background: "#ffffff", border: "2px solid #111111", color: "#111111",
+                padding: "0.875rem 2rem", fontFamily: "Impact, 'Arial Narrow', sans-serif",
+                fontSize: "1rem", fontWeight: 900, letterSpacing: "0.1em", textTransform: "uppercase",
+                cursor: "pointer",
+                borderRadius: "24px 4px 24px 4px",
+                boxShadow: "5px -5px 0px 0px #111111",
+              }}>CRACK A FLIPSIDE</button>
+
+              <button style={{
+                background: "#ffffff", border: "2px solid #111111", color: "#111111",
+                padding: "0.875rem 2rem", fontFamily: "Impact, 'Arial Narrow', sans-serif",
+                fontSize: "1rem", fontWeight: 900, letterSpacing: "0.1em", textTransform: "uppercase",
+                cursor: "pointer",
+                borderRadius: "24px 4px 24px 4px",
+                boxShadow: "5px -5px 0px 0px #111111",
+              }}>SHOP THE RANGE</button>
+            </div>
+
+            {/* Dark bg */}
+            <div style={{ background: "#111111", borderRadius: "12px", padding: "2.5rem", display: "flex", flexDirection: "column", gap: "1.5rem", alignItems: "flex-start" }}>
+              <button style={{
+                background: "#ffffff", border: "2px solid #111111", color: "#111111",
+                padding: "0.875rem 2rem", fontFamily: "Impact, 'Arial Narrow', sans-serif",
+                fontSize: "1rem", fontWeight: 900, letterSpacing: "0.1em", textTransform: "uppercase",
+                cursor: "pointer",
+                borderRadius: "24px 4px 24px 4px",
+                boxShadow: "5px -5px 0px 0px #ffffff",
+              }}>JOIN THE FLIPPY FAM</button>
+            </div>
+          </div>
+
+          {/* Right — anatomy */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+            <h3 style={{ fontFamily: "'Poppins', sans-serif", color: "#111", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase" }}>Button Anatomy</h3>
+
+            {[
+              { prop: "Border Radius", value: "24px 4px 24px 4px", note: "Top-left + bottom-right rounded. Top-right + bottom-left squared." },
+              { prop: "Box Shadow", value: "5px -5px 0px #111", note: "Hard shadow. No blur. Offset right (+X) and up (-Y). Creates a lifted, retro feel." },
+              { prop: "Background", value: "#FFFFFF", note: "Always white fill — works on any coloured background." },
+              { prop: "Border", value: "2px solid #111111", note: "Solid black. On dark backgrounds, use white shadow instead." },
+              { prop: "Font", value: "Impact / Poppins 900", note: "All caps. Bold. Tight letter-spacing." },
+              { prop: "Padding", value: "0.875rem 2rem", note: "Generous horizontal padding. Button should feel weighty." },
+            ].map((item) => (
+              <div key={item.prop} style={{ padding: "1rem 1.25rem", background: "#fff", border: "1px solid #E5E5E5", borderRadius: "8px" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "0.25rem" }}>
+                  <p style={{ fontFamily: "'Poppins', sans-serif", color: "#111", fontSize: "0.72rem", fontWeight: 700 }}>{item.prop}</p>
+                  <code style={{ fontFamily: "monospace", background: "#F5F5F5", color: "#555", fontSize: "0.65rem", padding: "2px 8px", borderRadius: "4px" }}>{item.value}</code>
+                </div>
+                <p style={{ fontFamily: "'Poppins', sans-serif", color: "#888", fontSize: "0.7rem", lineHeight: 1.5 }}>{item.note}</p>
+              </div>
+            ))}
+
+            <div style={{ marginTop: "0.5rem", padding: "1rem 1.25rem", background: "#fff8e6", border: "1px solid #F5A62340", borderRadius: "8px" }}>
+              <p style={{ fontFamily: "'Poppins', sans-serif", color: "#111", fontSize: "0.7rem", fontWeight: 700, marginBottom: "0.25rem" }}>CSS Snippet</p>
+              <code style={{ fontFamily: "monospace", color: "#555", fontSize: "0.65rem", lineHeight: 1.8, display: "block", whiteSpace: "pre" }}>
+{`border-radius: 24px 4px 24px 4px;
+box-shadow: 5px -5px 0px 0px #111;
+border: 2px solid #111111;
+background: #ffffff;`}
+              </code>
+            </div>
           </div>
         </div>
       </Section>
