@@ -70,6 +70,7 @@ function Nav() {
     { label: "Voice", href: "#voice" },
     { label: "Messaging", href: "#messaging" },
     { label: "Flavours", href: "#flavours" },
+    { label: "Iconography", href: "#iconography" },
     { label: "Social", href: "#social" },
   ];
 
@@ -989,6 +990,48 @@ export default function Page() {
               </div>
             </div>
           ))}
+        </div>
+      </Section>
+
+      {/* ── ICONOGRAPHY ── */}
+      <Section style={{ backgroundColor: "#0A0A0A" }} id="iconography">
+        <SectionHeader label="09.5 — Iconography" title="INGREDIENT ICONS" />
+        <p style={{ fontFamily: "'Poppins', sans-serif", color: "#888", fontSize: "0.85rem", marginBottom: "2.5rem", lineHeight: 1.7 }}>
+          Each Flipside ingredient is represented by a distinct 3D icon. These icons are used across packaging, digital, and marketing materials to communicate key product benefits at a glance.
+        </p>
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+          {[
+            { icon: "/images/icon-brain.png", label: "ALERTNESS", sublabel: "Improves", desc: "500mg of Taurine", bg: "linear-gradient(135deg, #e8d5f5, #c9a8f0)", border: "#9B6FD4" },
+            { icon: "/images/icon-battery.png", label: "GUARANA", sublabel: "Made With", desc: "Lasting Energy", bg: "linear-gradient(135deg, #d5f5d5, #8FE98F)", border: "#4CAF50" },
+            { icon: "/images/icon-vitamins.png", label: "VITAMINS", sublabel: "Packed With", desc: "Boosts Vitality", bg: "linear-gradient(135deg, #fdebd0, #f5c98c)", border: "#F5A623" },
+            { icon: "/images/icon-lightning.png", label: "ENERGISED", sublabel: "Powerfully", desc: "80mg of Caffeine", bg: "linear-gradient(135deg, #fef9c3, #fde047)", border: "#EAB308" },
+            { icon: "/images/icon-leaf.png", label: "PHYTOLIN", sublabel: "Fuelled By", desc: "Natural Energy", bg: "linear-gradient(135deg, #d5f5ec, #8FDCCD)", border: "#10B981" },
+          ].map((item) => (
+            <div key={item.label} style={{
+              borderRadius: "16px", border: `2px solid ${item.border}40`,
+              overflow: "hidden", background: "#111"
+            }}>
+              <div style={{ background: item.bg, padding: "2rem 1rem 1.5rem", display: "flex", justifyContent: "center", alignItems: "center", minHeight: "140px" }}>
+                <img src={item.icon} alt={item.label} style={{ height: "90px", width: "90px", objectFit: "contain", filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.15))" }} />
+              </div>
+              <div style={{ padding: "1rem 1rem 1.25rem" }}>
+                <p style={{ fontFamily: "'Poppins', sans-serif", color: item.border, fontSize: "0.6rem", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: "0.25rem" }}>
+                  {item.sublabel}
+                </p>
+                <p style={{ fontFamily: "Impact, 'Arial Narrow', sans-serif", color: "#F5F5F5", fontSize: "1.1rem", letterSpacing: "0.05em", fontWeight: 900, marginBottom: "0.2rem" }}>
+                  {item.label}
+                </p>
+                <p style={{ fontFamily: "'Poppins', sans-serif", color: "#666", fontSize: "0.7rem" }}>
+                  {item.desc}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div style={{ marginTop: "2rem", padding: "1.25rem 1.5rem", background: "#111", border: "1px solid #222", borderRadius: "12px" }}>
+          <p style={{ fontFamily: "'Poppins', sans-serif", color: "#888", fontSize: "0.75rem", lineHeight: 1.7 }}>
+            <span style={{ color: "#F5F5F5", fontWeight: 600 }}>Usage notes:</span> Icons should always appear on their corresponding gradient backgrounds. Do not recolour, flatten, or apply filters to the 3D icons. Maintain minimum icon size of 48px at all scales. Icons are available as PNG with transparent background.
+          </p>
         </div>
       </Section>
 
