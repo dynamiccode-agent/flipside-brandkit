@@ -67,6 +67,8 @@ function Nav() {
     { label: "Logo", href: "#logo" },
     { label: "Colours", href: "#colours" },
     { label: "Typography", href: "#typography" },
+    { label: "Font Downloads", href: "#fonts" },
+    { label: "Product Titles", href: "#product-titles" },
     { label: "Voice", href: "#voice" },
     { label: "Messaging", href: "#messaging" },
     { label: "Flavours", href: "#flavours" },
@@ -137,7 +139,7 @@ function SectionHeader({ label, title, light = false }: { label: string; title: 
       </p>
       <h2
         className={`font-display text-5xl md:text-7xl ${light ? "text-[#111111]" : "text-white"}`}
-        style={{ fontFamily: "Impact, 'Arial Narrow', sans-serif", fontWeight: 900, letterSpacing: "-0.02em" }}
+        style={{ fontFamily: "'Compacta', Impact, 'Arial Narrow', sans-serif", fontWeight: 900, letterSpacing: "-0.02em" }}
       >
         {title}
       </h2>
@@ -245,7 +247,7 @@ export default function Page() {
             >
               <p
                 className="text-[#111111] text-4xl md:text-5xl leading-tight"
-                style={{ fontFamily: "Impact, 'Arial Narrow', sans-serif", fontWeight: 900, letterSpacing: "-0.02em" }}
+                style={{ fontFamily: "'Compacta', Impact, 'Arial Narrow', sans-serif", fontWeight: 900, letterSpacing: "-0.02em" }}
               >
                 NO CRASH.
                 <br />
@@ -495,7 +497,7 @@ export default function Page() {
             <p
               className="text-white leading-none"
               style={{
-                fontFamily: "Impact, 'Arial Narrow', sans-serif",
+                fontFamily: "'Compacta', Impact, 'Arial Narrow', sans-serif",
                 fontWeight: 900,
                 letterSpacing: "-0.02em",
                 fontSize: "clamp(48px, 10vw, 89px)",
@@ -506,7 +508,7 @@ export default function Page() {
             <p
               className="text-white/60 leading-none"
               style={{
-                fontFamily: "Impact, 'Arial Narrow', sans-serif",
+                fontFamily: "'Compacta', Impact, 'Arial Narrow', sans-serif",
                 fontWeight: 900,
                 letterSpacing: "-0.02em",
                 fontSize: "56px",
@@ -517,7 +519,7 @@ export default function Page() {
             <p
               className="text-white/40 leading-none"
               style={{
-                fontFamily: "Impact, 'Arial Narrow', sans-serif",
+                fontFamily: "'Compacta', Impact, 'Arial Narrow', sans-serif",
                 fontWeight: 900,
                 letterSpacing: "-0.02em",
                 fontSize: "40px",
@@ -597,7 +599,7 @@ export default function Page() {
                   className="text-white flex-1"
                   style={{
                     fontFamily: t.display
-                      ? "Impact, 'Arial Narrow', sans-serif"
+                      ? "'Compacta', Impact, 'Arial Narrow', sans-serif"
                       : "'Poppins', sans-serif",
                     fontWeight: t.display ? 900 : 400,
                     fontSize: t.size,
@@ -622,7 +624,7 @@ export default function Page() {
           </p>
           <p
             className="text-[#111111] text-6xl md:text-8xl leading-none mb-4"
-            style={{ fontFamily: "Impact, 'Arial Narrow', sans-serif", fontWeight: 900, letterSpacing: "-0.02em" }}
+            style={{ fontFamily: "'Compacta', Impact, 'Arial Narrow', sans-serif", fontWeight: 900, letterSpacing: "-0.02em" }}
           >
             FLIP THE
             <br />
@@ -649,6 +651,86 @@ export default function Page() {
         </div>
       </Section>
 
+      {/* ── 6.1 FONT DOWNLOADS ── */}
+      <Section style={{ backgroundColor: '#ffffff' }} id="fonts">
+        <SectionHeader label="06.1 — Font Downloads" title="DOWNLOAD FONTS" />
+        <p style={{ color: '#555', marginBottom: '2rem', fontSize: '0.85rem', lineHeight: 1.7, fontFamily: "'Poppins', sans-serif" }}>
+          The Flipside Energy brand uses three typeface families. Download the font files below to use in design tools, print production, and digital assets.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {[
+            { name: 'Compacta', file: '/fonts/compacta.ttf', usage: 'Hero headlines, display type, large format', weight: 'Black 900', preview: 'FLIPSIDE ENERGY', style: { fontFamily: "'Compacta', Impact, sans-serif", fontSize: '2rem', fontWeight: 900 } },
+            { name: 'Batgrexo', file: '/fonts/batgrexo.ttf', usage: 'Product flavour titles only', weight: 'Regular 400', preview: 'BLUE ICE', style: { fontFamily: "'Batgrexo', serif", fontSize: '2rem', fontWeight: 400 } },
+            { name: 'Poppins Regular', file: '/fonts/poppins-regular.ttf', usage: 'Body text, descriptions, secondary content', weight: 'Regular 400', preview: 'Clean. Direct. Aussie.', style: { fontFamily: "'Poppins', sans-serif", fontSize: '1.2rem', fontWeight: 400 } },
+            { name: 'Poppins ExtraBold', file: '/fonts/poppins-extrabold.ttf', usage: 'Secondary headings, buttons, product card titles', weight: 'ExtraBold 800', preview: 'No Crash. No B.S.', style: { fontFamily: "'Poppins', sans-serif", fontSize: '1.2rem', fontWeight: 800 } },
+          ].map((font) => (
+            <div key={font.name} style={{ border: '1px solid #E5E5E5', borderRadius: '12px', overflow: 'hidden', background: '#fff' }}>
+              {/* Preview area */}
+              <div style={{ background: '#f9f9f9', padding: '1.5rem', borderBottom: '1px solid #E5E5E5', minHeight: '80px', display: 'flex', alignItems: 'center' }}>
+                <span style={{ ...font.style as React.CSSProperties, color: '#111' }}>{font.preview}</span>
+              </div>
+              {/* Info + download */}
+              <div style={{ padding: '1.25rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '1rem' }}>
+                <div>
+                  <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, color: '#111', fontSize: '0.85rem', marginBottom: '0.2rem' }}>{font.name}</p>
+                  <p style={{ fontFamily: "'Poppins', sans-serif", color: '#888', fontSize: '0.7rem' }}>{font.weight} · {font.usage}</p>
+                </div>
+                <a
+                  href={font.file}
+                  download
+                  style={{
+                    background: '#111', color: '#fff', padding: '0.5rem 1.25rem',
+                    borderRadius: '24px 4px 24px 4px',
+                    boxShadow: '3px -3px 0px 0px #111',
+                    border: '2px solid #111',
+                    fontSize: '0.65rem', fontFamily: "'Poppins', sans-serif",
+                    fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' as const,
+                    textDecoration: 'none', display: 'inline-block', whiteSpace: 'nowrap' as const
+                  }}
+                >
+                  Download ↓
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* ── 6.2 PRODUCT TITLE TYPOGRAPHY ── */}
+      <Section style={{ backgroundColor: '#F5F5F5' }} id="product-titles">
+        <SectionHeader label="06.2 — Product Titles" title="BATGREXO STYLE" />
+        <p style={{ color: '#555', marginBottom: '2rem', fontSize: '0.85rem', lineHeight: 1.7, fontFamily: "'Poppins', sans-serif" }}>
+          Product flavour names use the <strong>Batgrexo</strong> typeface with a signature layered treatment: black fill text, white border/stroke, with a second black outline. This creates the bold, high-contrast can label style unique to Flipside Energy.
+        </p>
+
+        {/* Show the 4 product title images */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+          {['/images/title-1.png', '/images/title-2.png', '/images/title-3.png', '/images/title-4.png'].map((src, i) => (
+            <div key={i} style={{ background: '#111', borderRadius: '8px', padding: '1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '80px' }}>
+              <img src={src} alt={`Flavour title ${i+1}`} style={{ maxHeight: '60px', width: 'auto', objectFit: 'contain' }} />
+            </div>
+          ))}
+        </div>
+
+        {/* Batgrexo treatment specs */}
+        <div style={{ background: '#fff', border: '1px solid #E5E5E5', borderRadius: '12px', padding: '1.5rem' }}>
+          <h3 style={{ fontFamily: "'Poppins', sans-serif", color: '#111', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '1rem' }}>Layered Text Treatment</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {[
+              { layer: 'Layer 1 — Fill', spec: 'Black (#111111)', note: 'Base text fill' },
+              { layer: 'Layer 2 — Stroke', spec: 'White, 4–6px', note: 'Outer glow/border' },
+              { layer: 'Layer 3 — Outline', spec: 'Black (#111111), 2px', note: 'Final definition stroke' },
+            ].map((l) => (
+              <div key={l.layer} style={{ padding: '1rem', background: '#f9f9f9', borderRadius: '8px' }}>
+                <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, color: '#111', fontSize: '0.72rem', marginBottom: '0.2rem' }}>{l.layer}</p>
+                <code style={{ fontFamily: 'monospace', color: '#555', fontSize: '0.65rem', background: '#eee', padding: '2px 8px', borderRadius: '4px' }}>{l.spec}</code>
+                <p style={{ fontFamily: "'Poppins', sans-serif", color: '#888', fontSize: '0.65rem', marginTop: '0.3rem' }}>{l.note}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
       {/* ── 6. VOICE & TONE ── */}
       <Section id="voice" style={{ backgroundColor: "#0A0A0A" }}>
         <SectionHeader label="07 — Voice & Tone" title="VOICE & TONE" />
@@ -670,7 +752,7 @@ export default function Page() {
               <div
                 className="text-2xl font-bold mb-3"
                 style={{
-                  fontFamily: "Impact, 'Arial Narrow', sans-serif",
+                  fontFamily: "'Compacta', Impact, 'Arial Narrow', sans-serif",
                   fontWeight: 900,
                   letterSpacing: "-0.02em",
                   color: t.colour,
@@ -771,7 +853,7 @@ export default function Page() {
               </p>
               <p
                 className="text-white text-4xl md:text-6xl"
-                style={{ fontFamily: "Impact, 'Arial Narrow', sans-serif", fontWeight: 900, letterSpacing: "-0.02em" }}
+                style={{ fontFamily: "'Compacta', Impact, 'Arial Narrow', sans-serif", fontWeight: 900, letterSpacing: "-0.02em" }}
               >
                 THE BETTER SIDE OF ENERGY
               </p>
@@ -783,7 +865,7 @@ export default function Page() {
                 </p>
                 <p
                   className="text-white text-2xl md:text-3xl"
-                  style={{ fontFamily: "Impact, 'Arial Narrow', sans-serif", fontWeight: 900, letterSpacing: "-0.02em" }}
+                  style={{ fontFamily: "'Compacta', Impact, 'Arial Narrow', sans-serif", fontWeight: 900, letterSpacing: "-0.02em" }}
                 >
                   FLIPPING DELICIOUS CLEAN ENERGY
                 </p>
@@ -794,7 +876,7 @@ export default function Page() {
                 </p>
                 <p
                   className="text-white text-2xl md:text-3xl"
-                  style={{ fontFamily: "Impact, 'Arial Narrow', sans-serif", fontWeight: 900, letterSpacing: "-0.02em" }}
+                  style={{ fontFamily: "'Compacta', Impact, 'Arial Narrow', sans-serif", fontWeight: 900, letterSpacing: "-0.02em" }}
                 >
                   WELCOME TO THE FLIPSIDE
                 </p>
@@ -846,7 +928,7 @@ export default function Page() {
               >
                 <p
                   className="text-white text-2xl mb-1"
-                  style={{ fontFamily: "Impact, 'Arial Narrow', sans-serif", fontWeight: 900, letterSpacing: "-0.02em" }}
+                  style={{ fontFamily: "'Compacta', Impact, 'Arial Narrow', sans-serif", fontWeight: 900, letterSpacing: "-0.02em" }}
                 >
                   {ing.amount}
                 </p>
@@ -943,7 +1025,7 @@ export default function Page() {
                 >
                   <p
                     className="text-3xl text-[#111111] leading-tight"
-                    style={{ fontFamily: "Impact, 'Arial Narrow', sans-serif", fontWeight: 900, letterSpacing: "-0.02em" }}
+                    style={{ fontFamily: "'Compacta', Impact, 'Arial Narrow', sans-serif", fontWeight: 900, letterSpacing: "-0.02em" }}
                   >
                     {flavour.name.toUpperCase()}
                   </p>
@@ -1021,7 +1103,7 @@ export default function Page() {
                 <p style={{ fontFamily: "'Poppins', sans-serif", color: item.border, fontSize: "0.6rem", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: "0.25rem" }}>
                   {item.sublabel}
                 </p>
-                <p style={{ fontFamily: "Impact, 'Arial Narrow', sans-serif", color: "#F5F5F5", fontSize: "1.1rem", letterSpacing: "0.05em", fontWeight: 900, marginBottom: "0.2rem" }}>
+                <p style={{ fontFamily: "'Compacta', Impact, 'Arial Narrow', sans-serif", color: "#F5F5F5", fontSize: "1.1rem", letterSpacing: "0.05em", fontWeight: 900, marginBottom: "0.2rem" }}>
                   {item.label}
                 </p>
                 <p style={{ fontFamily: "'Poppins', sans-serif", color: "#666", fontSize: "0.7rem" }}>
@@ -1055,7 +1137,7 @@ export default function Page() {
 
             {/* The rhyme */}
             <div style={{ background: "#111", borderRadius: "12px", padding: "1.75rem 2rem", textAlign: "center" }}>
-              <p style={{ fontFamily: "Impact, 'Arial Narrow', sans-serif", color: "#111", fontSize: "0.8rem", letterSpacing: "0.08em", lineHeight: 1.8, textTransform: "uppercase", textShadow: "none", userSelect: "none" }}>
+              <p style={{ fontFamily: "'Compacta', Impact, 'Arial Narrow', sans-serif", color: "#111", fontSize: "0.8rem", letterSpacing: "0.08em", lineHeight: 1.8, textTransform: "uppercase", textShadow: "none", userSelect: "none" }}>
                 {/* Intentionally near-invisible on dark — mirrors the website footer treatment */}
                 ROSES ARE RED, VIOLETS ARE BLUE,<br />
                 TROY AND ADRIAN WANT TO RE-ENERGIZE YOU
@@ -1070,7 +1152,7 @@ export default function Page() {
           <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
             <h3 style={{ fontFamily: "'Poppins', sans-serif", color: "#111", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: "0.5rem" }}>The Brand Rhyme</h3>
             <div style={{ background: "#f9f9f9", border: "1px solid #eee", borderRadius: "12px", padding: "1.5rem 2rem", marginBottom: "0.5rem" }}>
-              <p style={{ fontFamily: "Impact, 'Arial Narrow', sans-serif", color: "#111", fontSize: "1rem", letterSpacing: "0.05em", lineHeight: 1.9, textTransform: "uppercase" }}>
+              <p style={{ fontFamily: "'Compacta', Impact, 'Arial Narrow', sans-serif", color: "#111", fontSize: "1rem", letterSpacing: "0.05em", lineHeight: 1.9, textTransform: "uppercase" }}>
                 Roses are red,<br />
                 Violets are blue,<br />
                 Troy and Adrian want<br />
@@ -1116,7 +1198,7 @@ export default function Page() {
             <div style={{ background: "#FF9EDB", borderRadius: "12px", padding: "2.5rem", display: "flex", flexDirection: "column", gap: "1.5rem", alignItems: "flex-start" }}>
               <button style={{
                 background: "#ffffff", border: "2px solid #111111", color: "#111111",
-                padding: "0.875rem 2rem", fontFamily: "Impact, 'Arial Narrow', sans-serif",
+                padding: "0.875rem 2rem", fontFamily: "'Compacta', Impact, 'Arial Narrow', sans-serif",
                 fontSize: "1rem", fontWeight: 900, letterSpacing: "0.1em", textTransform: "uppercase",
                 cursor: "pointer",
                 borderRadius: "24px 4px 24px 4px",
@@ -1125,7 +1207,7 @@ export default function Page() {
 
               <button style={{
                 background: "#ffffff", border: "2px solid #111111", color: "#111111",
-                padding: "0.875rem 2rem", fontFamily: "Impact, 'Arial Narrow', sans-serif",
+                padding: "0.875rem 2rem", fontFamily: "'Compacta', Impact, 'Arial Narrow', sans-serif",
                 fontSize: "1rem", fontWeight: 900, letterSpacing: "0.1em", textTransform: "uppercase",
                 cursor: "pointer",
                 borderRadius: "24px 4px 24px 4px",
@@ -1137,7 +1219,7 @@ export default function Page() {
             <div style={{ background: "#111111", borderRadius: "12px", padding: "2.5rem", display: "flex", flexDirection: "column", gap: "1.5rem", alignItems: "flex-start" }}>
               <button style={{
                 background: "#ffffff", border: "2px solid #111111", color: "#111111",
-                padding: "0.875rem 2rem", fontFamily: "Impact, 'Arial Narrow', sans-serif",
+                padding: "0.875rem 2rem", fontFamily: "'Compacta', Impact, 'Arial Narrow', sans-serif",
                 fontSize: "1rem", fontWeight: 900, letterSpacing: "0.1em", textTransform: "uppercase",
                 cursor: "pointer",
                 borderRadius: "24px 4px 24px 4px",
@@ -1193,12 +1275,12 @@ background: #ffffff;`}
           {/* Example 1 — light blue bg */}
           <div style={{ background: "#BCEFF9", borderRadius: "12px", padding: "2.5rem 2rem", display: "flex", alignItems: "center", gap: "1rem", flexWrap: "wrap" }}>
             <span style={{
-              fontFamily: "Impact, 'Arial Narrow', sans-serif",
+              fontFamily: "'Compacta', Impact, 'Arial Narrow', sans-serif",
               fontSize: "clamp(1.8rem, 5vw, 2.8rem)", fontWeight: 900,
               color: "#111", letterSpacing: "-0.01em", textTransform: "uppercase"
             }}>CHOOSE YOUR</span>
             <span style={{
-              fontFamily: "Impact, 'Arial Narrow', sans-serif",
+              fontFamily: "'Compacta', Impact, 'Arial Narrow', sans-serif",
               fontSize: "clamp(1.8rem, 5vw, 2.8rem)", fontWeight: 900,
               color: "#ffffff", letterSpacing: "-0.01em", textTransform: "uppercase",
               background: "#111111",
@@ -1214,7 +1296,7 @@ background: #ffffff;`}
           {/* Example 2 — mint bg */}
           <div style={{ background: "#8FDCCD", borderRadius: "12px", padding: "2.5rem 2rem", display: "flex", alignItems: "center", gap: "1rem", flexWrap: "wrap" }}>
             <span style={{
-              fontFamily: "Impact, 'Arial Narrow', sans-serif",
+              fontFamily: "'Compacta', Impact, 'Arial Narrow', sans-serif",
               fontSize: "clamp(1.8rem, 5vw, 2.8rem)", fontWeight: 900,
               color: "#ffffff", letterSpacing: "-0.01em", textTransform: "uppercase",
               background: "#111111",
@@ -1225,7 +1307,7 @@ background: #ffffff;`}
               boxShadow: "6px 6px 0px 0px #111111",
             }}>STEADY ENERGY</span>
             <span style={{
-              fontFamily: "Impact, 'Arial Narrow', sans-serif",
+              fontFamily: "'Compacta', Impact, 'Arial Narrow', sans-serif",
               fontSize: "clamp(1.8rem, 5vw, 2.8rem)", fontWeight: 900,
               color: "#111", letterSpacing: "-0.01em", textTransform: "uppercase"
             }}>, ALL DAY.</span>
@@ -1353,7 +1435,7 @@ display: inline-block;`}
           </p>
           <p
             className="text-[#111111] text-3xl md:text-5xl leading-tight"
-            style={{ fontFamily: "Impact, 'Arial Narrow', sans-serif", fontWeight: 900, letterSpacing: "-0.02em" }}
+            style={{ fontFamily: "'Compacta', Impact, 'Arial Narrow', sans-serif", fontWeight: 900, letterSpacing: "-0.02em" }}
           >
             REAL PEOPLE.
             <br />
@@ -1377,7 +1459,7 @@ display: inline-block;`}
               </p>
               <p
                 className="text-white text-4xl"
-                style={{ fontFamily: "Impact, 'Arial Narrow', sans-serif", fontWeight: 900, letterSpacing: "-0.02em" }}
+                style={{ fontFamily: "'Compacta', Impact, 'Arial Narrow', sans-serif", fontWeight: 900, letterSpacing: "-0.02em" }}
               >
                 @flipsideenergy
               </p>
@@ -1469,7 +1551,7 @@ display: inline-block;`}
               >
                 <p
                   className="text-[#111111] text-lg"
-                  style={{ fontFamily: "Impact, 'Arial Narrow', sans-serif", fontWeight: 900, letterSpacing: "-0.02em" }}
+                  style={{ fontFamily: "'Compacta', Impact, 'Arial Narrow', sans-serif", fontWeight: 900, letterSpacing: "-0.02em" }}
                 >
                   FLIPSIDE
                 </p>

@@ -1,3 +1,31 @@
+@font-face {
+  font-family: 'Compacta';
+  src: url('/fonts/compacta.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Batgrexo';
+  src: url('/fonts/batgrexo.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/poppins-regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/poppins-extrabold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
 @import "tailwindcss";
 
 @theme inline {
@@ -38,7 +66,7 @@ body {
 }
 
 .font-display {
-  font-family: Impact, 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Compacta', Impact, 'Arial Narrow', Arial, sans-serif;
   font-weight: 900;
   letter-spacing: -0.02em;
 }
